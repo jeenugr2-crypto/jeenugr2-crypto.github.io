@@ -12,12 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
   <!-- ===== NAV ===== -->
   <header class="nav">
     <div class="container nav__inner">
-      <a href="#" class="brand">
+      <a href="#top" class="brand">
         <img src="logo.jpg" alt="Pragyan Academy logo" class="brand__mark">
         <span class="brand__text">
           <span class="brand__name">Pragyan Academy</span>
@@ -46,7 +46,7 @@
       <div class="hero__copy">
         <span class="pill">
           <svg class="icon icon--xs" viewBox="0 0 24 24"><path d="M12 2l1.8 5.6L19.5 9l-4.6 3.4L16.6 18 12 14.7 7.4 18l1.7-5.6L4.5 9l5.7-1.4z"/></svg>
-          Trusted by parents · Loved by kids
+          Built for curious learners
         </span>
         <h1 class="hero__title">
           Maths that kids<br>
@@ -64,21 +64,21 @@
           <a href="#testimonials" class="btn btn--outline btn--lg">See parent stories</a>
         </div>
         <ul class="stats">
-          <li><strong>100+</strong><span>Happy students</span></li>
-          <li><strong>4.9<span class="star">★</span></strong><span>Parent rating</span></li>
-          <li><strong>1:1</strong><span>Personal attention</span></li>
+            <li><strong>1:1</strong><span>Personal attention</span></li>
+            <li><strong>Weekly</strong><span>Progress check-ins</span></li>
+            <li><strong>Concept-first</strong><span>Learning approach</span></li>
         </ul>
       </div>
 
       <div class="hero__visual">
         <div class="hero__frame">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="A young student writing in a maths notebook" class="hero__img">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="A young student writing in a maths notebook" class="hero__img" width="900" height="900" fetchpriority="high" decoding="async">
         </div>
         <div class="badge">
           <span class="badge__grade">A+</span>
           <span class="badge__text">
             <strong>Grades up</strong>
-            <small>Reported by parents</small>
+            <small>Progress tracked weekly</small>
           </span>
         </div>
         <span class="hero__blob"></span>
@@ -154,7 +154,7 @@
             <svg class="icon" viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
           </span>
           <h3>Visible school results</h3>
-          <p>Parents see scores move up within weeks.</p>
+          <p>Progress you can see over time.</p>
         </div>
 
         <div class="card">
@@ -174,7 +174,7 @@
         </div>
 
         <div class="card card--promise">
-          <img src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&w=1000&q=80" alt="Stationery and a maths notebook on a desk" class="card__img">
+          <img src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&w=1000&q=80" alt="Stationery and a maths notebook on a desk" class="card__img" width="1000" height="650" loading="lazy" decoding="async">
           <div class="card__overlay">
             <span class="pill pill--ghost">
               <svg class="icon icon--xs" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13l1.5 9-5-3-5 3 1.5-9"/></svg>
@@ -254,7 +254,7 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <a href="#" class="brand">
+      <a href="#top" class="brand">
         <img src="logo.jpg" alt="Pragyan Academy logo" class="brand__mark">
         <span class="brand__text">
           <span class="brand__name">Pragyan Academy</span>
@@ -271,7 +271,7 @@
           WhatsApp
         </a>
       </div>
-      <p class="footer__copy">© 2026 Pragyan Academy. Crafted with care for curious minds.</p>
+      <p class="footer__copy">© <span id="current-year">2026</span> Pragyan Academy. Crafted with care for curious minds.</p>
     </div>
   </footer>
 

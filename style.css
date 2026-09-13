@@ -34,6 +34,8 @@
 
 html { scroll-behavior: smooth; }
 
+section[id] { scroll-margin-top: 90px; }
+
 body {
   margin: 0;
   font-family: var(--sans);
@@ -46,6 +48,11 @@ body {
 
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
 h1, h2, h3, p { margin: 0; }
 ul { list-style: none; margin: 0; padding: 0; }
 
@@ -117,6 +124,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-2px); }
+.btn:focus-visible { transform: translateY(-1px); }
 .btn--sm { padding: 0.8em 1.4em; font-size: 0.92rem; }
 .btn--lg { padding: 1.05em 1.8em; font-size: 1.02rem; }
 
@@ -404,6 +412,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   object-fit: cover;
   position: absolute; inset: 0;
 }
+
 .card__overlay {
   position: relative; z-index: 1;
   height: 100%; min-height: 200px;
