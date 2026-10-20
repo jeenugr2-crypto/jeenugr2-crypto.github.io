@@ -575,6 +575,21 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 /* ==========================================================
+   DEMO BOOKING
+   ========================================================== */
+.booking { padding: 5rem 0; background: var(--cream-2); }
+.booking__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.booking__copy h2 { max-width: 15ch; }
+.booking__copy p { color: var(--ink-soft); margin-top: 1.5rem; max-width: 52ch; }
+.booking__copy .booking__note { font-size: 0.9rem; }
+.booking__panel { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 2rem; box-shadow: var(--shadow-sm); }
+.booking__panel h3 { font-family: var(--serif); font-size: 2rem; font-weight: 500; line-height: 1.1; margin-bottom: 1.5rem; }
+.booking__panel p { color: var(--ink-soft); margin: 1rem 0; }
+.booking__panel .booking__test { color: var(--coral-dark); font-weight: 600; }
+.booking__payment { margin: 1.5rem 0; }
+.booking__followup { display: inline-block; margin-top: 0.7rem; color: var(--coral); text-decoration: underline; font-size: 0.9rem; }
+
+/* ==========================================================
    CTA / CONTACT
    ========================================================== */
 .contact { padding: 4rem 0 5rem; }
@@ -716,10 +731,17 @@ ul { list-style: none; margin: 0; padding: 0; }
   .tgrid { grid-template-columns: 1fr; }
   .tcard--tall { grid-row: auto; }
   .tcard__quote--lg { font-size: 1.5rem; }
+  .booking__inner { grid-template-columns: 1fr; }
+  .booking__copy h2 { max-width: none; }
+  .booking__panel { padding: 1.5rem; }
   .cta { padding: 2.5rem 1.6rem; border-radius: 28px; }
   .cta__card { padding: 1.5rem; }
   .cta__number { font-size: 2.3rem; }
   .cta__bottom { flex-direction: column; align-items: flex-start; }
   .cta__mark { display: none; }
   .footer__inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .nav__actions .btn { padding: 0.7em 0.9em; font-size: 0.78rem; }
 }
