@@ -50,29 +50,18 @@
       <div class="cal-booking__intro">
         <span class="eyebrow">Choose a time · Pay to book</span>
         <h1 class="h2">Book your 30-minute maths demo.</h1>
-        <p>Select an available time below, enter your details, and pay ₹49 through Razorpay to confirm your booking.</p>
+        <p>Open our Cal ID booking page, select an available time, and pay ₹49 through Razorpay to confirm your booking.</p>
         <p>Use an email address you can access. Your confirmation and meeting details will be sent there after the booking is complete.</p>
       </div>
 
-      <div class="cal-booking__calendar">
-        <div id="my-cal-inline" class="cal-booking__embed" aria-label="Choose an available demo time"></div>
+      <div class="cal-booking__action">
+        <a class="btn btn--primary btn--lg" href="https://cal.id/pragyan-academy/demo-1-1">Open booking and payment</a>
       </div>
 
-      <p class="cal-booking__help">Calendar not loading? <a href="https://cal.id/pragyan-academy/demo-1-1" target="_blank" rel="noopener">Open the booking page directly</a>.</p>
-      <p class="cal-booking__help">Paid but unable to book, or missing a meeting link? <a href="https://wa.me/917568540848?text=Hi%2C%20I%20paid%20%E2%82%B949%20for%20a%20Pragyan%20Academy%20demo%20but%20need%20help%20booking%20or%20getting%20my%20meeting%20link.%20My%20Razorpay%20payment%20ID%3A%20.%20My%20preferred%20or%20booked%20date%20and%20time%3A%20" target="_blank" rel="noopener">Message us on WhatsApp</a>. Please do not pay again.</p>
+      <p class="cal-booking__help">Already paid through the earlier payment button, unable to book, or missing a meeting link? <a href="https://wa.me/917568540848?text=Hi%2C%20I%20paid%20%E2%82%B949%20for%20a%20Pragyan%20Academy%20demo%20but%20need%20help%20booking%20or%20getting%20my%20meeting%20link.%20My%20Razorpay%20payment%20ID%3A%20.%20My%20preferred%20or%20booked%20date%20and%20time%3A%20" target="_blank" rel="noopener">Message us on WhatsApp</a>. Please do not pay again.</p>
     </div>
   </main>
 
   <script src="theme.js"></script>
-  <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://cal.id/embed-link/embed.js", "init");
-    Cal("init", "default", {origin:"https://cal.id"});
-    Cal.ns["default"]("inline", {
-      elementOrSelector:"#my-cal-inline",
-      config: {"layout":"month_view"},
-      calLink: "pragyan-academy/demo-1-1"
-    });
-    Cal.ns["default"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#007ee5"},"dark":{"cal-brand":"#fafafa"}},"hideEventTypeDetails":false,"layout":"month_view"});
-  </script>
 </body>
 </html>
