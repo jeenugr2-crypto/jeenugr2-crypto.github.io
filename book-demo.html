@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Choose your demo time — Pragyan Academy</title>
+  <meta name="description" content="Choose a time for your Pragyan Academy maths demo after payment.">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="brand" aria-label="Pragyan Academy home">
+        <img src="logo.jpg" alt="" class="brand__mark">
+        <span class="brand__text">
+          <span class="brand__name">Pragyan Academy</span>
+          <span class="brand__tag">Maths · Made Joyful</span>
+        </span>
+      </a>
+      <div class="nav__actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Toggle light / dark mode">
+          <svg class="icon theme-toggle__moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon theme-toggle__sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 6.34l1.41-1.41M2 12h2M22 12h-2M4.93 19.07l1.41-1.41M17.66 17.66l1.41 1.41"/></svg>
+        </button>
+        <a href="/" class="btn btn--outline btn--sm">Back to website</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cal-booking">
+    <div class="container">
+      <div class="cal-booking__intro">
+        <span class="eyebrow">Step 2 of 2 · Choose your time</span>
+        <h1 class="h2">Book your 30-minute maths demo.</h1>
+        <p>After paying ₹49, select an available time below. Use the same email address you used for payment so you can find your booking confirmation.</p>
+        <p>Finish the booking form to reserve your slot. Check the confirmation email for your meeting details.</p>
+      </div>
+
+      <div class="cal-booking__calendar">
+        <div id="my-cal-inline" class="cal-booking__embed" aria-label="Choose an available demo time"></div>
+      </div>
+
+      <p class="cal-booking__help">Calendar not loading? <a href="https://cal.id/pragyan-academy/demo-1-1" target="_blank" rel="noopener">Open the booking page directly</a>.</p>
+      <p class="cal-booking__help">Paid but unable to book, or missing a meeting link? <a href="https://wa.me/917568540848?text=Hi%2C%20I%20paid%20%E2%82%B949%20for%20a%20Pragyan%20Academy%20demo%20but%20need%20help%20booking%20or%20getting%20my%20meeting%20link.%20My%20Razorpay%20payment%20ID%3A%20.%20My%20preferred%20or%20booked%20date%20and%20time%3A%20" target="_blank" rel="noopener">Message us on WhatsApp</a>. Please do not pay again.</p>
+    </div>
+  </main>
+
+  <script src="theme.js"></script>
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://cal.id/embed-link/embed.js", "init");
+    Cal("init", "default", {origin:"https://cal.id"});
+    Cal.ns["default"]("inline", {
+      elementOrSelector:"#my-cal-inline",
+      config: {"layout":"month_view"},
+      calLink: "pragyan-academy/demo-1-1"
+    });
+    Cal.ns["default"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#007ee5"},"dark":{"cal-brand":"#fafafa"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+</body>
+</html>

@@ -588,6 +588,20 @@ ul { list-style: none; margin: 0; padding: 0; }
 .booking__payment { margin: 1.5rem 0; }
 .booking__followup { display: inline-block; margin-top: 0.7rem; color: var(--coral); text-decoration: underline; font-size: 0.9rem; }
 
+/* ---------- post-payment booking page ---------- */
+.cal-booking { padding: clamp(2.5rem, 5vw, 5rem) 0; background: var(--cream-2); min-height: calc(100vh - 80px); }
+.cal-booking__intro { max-width: 750px; margin: 0 auto 2rem; text-align: center; }
+.cal-booking__intro h1 { margin-top: 0.75rem; }
+.cal-booking__intro p { color: var(--ink-soft); margin-top: 1rem; }
+.cal-booking__calendar { padding: 1rem; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); box-shadow: var(--shadow-sm); }
+.cal-booking__embed { width: 100%; min-height: 750px; height: min(950px, 85vh); overflow: auto; }
+.cal-booking__help { max-width: 750px; margin: 1.5rem auto 0; color: var(--ink-soft); text-align: center; font-size: 0.9rem; }
+.cal-booking__help a { color: var(--coral); text-decoration: underline; }
+@media (max-width: 768px) {
+  .cal-booking__calendar { padding: 0.25rem; border-radius: 16px; }
+  .cal-booking__embed { min-height: 680px; height: 85vh; }
+}
+
 /* ==========================================================
    CTA / CONTACT
    ========================================================== */
