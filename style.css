@@ -334,15 +334,16 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ==========================================================
    ABOUT
    ========================================================== */
-.about { padding: 4rem 0 6rem; }
+.about { padding: clamp(4.5rem, 8vw, 8rem) 0; }
 .about__inner {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-columns: minmax(300px, .8fr) 1.2fr;
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: start;
 }
-.about__heading { padding-left: 4rem; }
-.educator { margin: 2rem 0 0; max-width: 320px; }
+.about__heading { position: sticky; top: 110px; padding-left: 1rem; }
+.about__heading .h2 { max-width: 12ch; }
+.educator { margin: 2rem 0 0; max-width: 380px; }
 .educator img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line); }
 .educator figcaption { display: flex; flex-direction: column; gap: .4rem; margin-top: 1rem; }
 .educator figcaption strong { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; }
@@ -688,7 +689,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero__inner { grid-template-columns: 1fr; gap: 3.5rem; }
   .hero__visual { max-width: 560px; }
   .about__inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about__heading { padding-left: 0; }
+  .about__heading { position: relative; top: auto; padding-left: 0; }
   .cta__top { grid-template-columns: 1fr; }
   .cta__title { max-width: none; }
 }
@@ -724,19 +725,6 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 /* ---------- founder story ---------- */
-.founder-story { padding: clamp(4.5rem, 8vw, 8rem) 0; }
-.founder-story__layout {
-  display: grid;
-  grid-template-columns: minmax(280px, .82fr) 1.18fr;
-  gap: clamp(3rem, 8vw, 8rem);
-  align-items: start;
-}
-.founder-story__intro { position: sticky; top: 110px; }
-.founder-story__intro .h2 { max-width: 13ch; }
-.founder-story__lead { max-width: 42ch; margin-top: 1.6rem; color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; }
-.founder-story__signature { display: flex; flex-direction: column; gap: .15rem; margin-top: 2rem; padding-left: 1.1rem; border-left: 2px solid var(--coral); }
-.founder-story__signature span { font-family: var(--serif); font-size: 1.35rem; }
-.founder-story__signature small { color: var(--ink-soft); }
 .founder-story__body { border-top: 1px solid var(--line); }
 .founder-story__body > p { margin-top: 1.6rem; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.75; max-width: 62ch; }
 .founder-story__body .founder-story__opening { color: var(--ink); font-family: var(--serif); font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 1.32; max-width: 24ch; }
@@ -744,7 +732,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .founder-story__proof div { padding: 1.25rem 1rem 1.25rem 0; border-top: 1px solid var(--line); }
 .founder-story__proof dt { color: var(--coral); font-family: var(--serif); font-size: 1.8rem; line-height: 1.1; }
 .founder-story__proof dd { margin: .6rem 0 0; color: var(--ink-soft); font-size: .82rem; line-height: 1.45; }
-.founder-story blockquote { margin: 2.5rem 0 0; padding: 1.8rem 2rem; border-left: 3px solid var(--coral); background: var(--peach); border-radius: 0 18px 18px 0; color: var(--ink); font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.35; }
+.founder-story__body blockquote { margin: 2.5rem 0 0; padding: 1.8rem 2rem; border-left: 3px solid var(--coral); background: var(--peach); border-radius: 0 18px 18px 0; color: var(--ink); font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.35; }
 @media (max-width: 1100px) and (min-width: 769px) {
   .nav__inner { gap: 1rem; }
   .nav__links { gap: .8rem; }
@@ -752,15 +740,14 @@ ul { list-style: none; margin: 0; padding: 0; }
   .nav__actions .btn { font-size: .8rem; padding-inline: 1em; }
 }
 @media (max-width: 900px) {
-  .founder-story__layout { grid-template-columns: 1fr; gap: 3rem; }
-  .founder-story__intro { position: relative; top: auto; }
-  .founder-story__intro .h2 { max-width: 18ch; }
+  .about__heading { position: relative; top: auto; }
+  .about__heading .h2 { max-width: 18ch; }
 }
 @media (max-width: 600px) {
   .founder-story__proof { grid-template-columns: 1fr; gap: .2rem; }
   .founder-story__proof div { display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; align-items: baseline; }
   .founder-story__proof dd { margin-top: 0; }
-  .founder-story blockquote { padding: 1.4rem 1.25rem; }
+  .founder-story__body blockquote { padding: 1.4rem 1.25rem; }
 }
 
 /* ---------- sample study notes ---------- */
