@@ -12,11 +12,11 @@
   // Keeps the page usable when opened directly from the filesystem, where
   // browsers block fetch() requests for local JSON files.
   var fallbackTestimonials = [
-    { name: 'Priya S.', relation: 'Parent of Grade 7 student', rating: 5, quote: "Within just a couple of months, my daughter's marks in school have jumped noticeably. But what makes me happier is she actually enjoys maths now — something I never thought I'd say.", avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80', featured: true },
+    { name: 'Priya S.', relation: 'Parent of Grade 7 student', rating: 5, quote: "Within just a couple of months, my daughter's marks in school have jumped noticeably. But what makes me happier is she actually enjoys maths now — something I never thought I'd say.", featured: true },
     { name: 'Anil K.', relation: 'Parent of Grade 5 student', rating: 5, quote: 'He looks forward to his maths session every single day. As a parent, that\'s all I could ask for.', avatar: null },
-    { name: 'Meera R.', relation: 'Parent of Grade 9 student', rating: 5, quote: 'School performance has improved significantly. Her confidence in solving problems has changed completely.', avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=120&q=80' },
+    { name: 'Meera R.', relation: 'Parent of Grade 9 student', rating: 5, quote: 'School performance has improved significantly. Her confidence in solving problems has changed completely.' },
     { name: 'Suresh M.', relation: 'Parent of Grade 6 student', rating: 5, quote: 'He used to dread maths homework. Now he finishes it before I even ask. The change has been wonderful.', avatar: null, tint: true },
-    { name: 'Kavita D.', relation: 'Parent of Grade 8 student', rating: 5, quote: 'What surprised me most — my child actually talks about what she learnt today in maths. That spark is what every parent dreams of.', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80' }
+    { name: 'Kavita D.', relation: 'Parent of Grade 8 student', rating: 5, quote: 'What surprised me most — my child actually talks about what she learnt today in maths. That spark is what every parent dreams of.' }
   ];
 
   function el(tag, className, text) {
@@ -27,18 +27,10 @@
   }
 
   function avatar(t) {
-    if (t.avatar) {
-      var img = el('img', 'avatar');
-      img.src = t.avatar;
-      img.alt = '';
-      img.loading = 'lazy';
-      img.onerror = function () {
-        var fallback = el('span', 'avatar avatar--initial', t.name.trim().charAt(0).toUpperCase());
-        img.replaceWith(fallback);
-      };
-      return img;
-    }
-    return el('span', 'avatar avatar--initial', t.name.trim().charAt(0).toUpperCase());
+    var name = t.name.trim();
+    var tone = 0;
+    for (var i = 0; i < name.length; i += 1) tone += name.charCodeAt(i);
+    return el('span', 'avatar avatar--initial avatar--tone-' + ((tone % 5) + 1), name.charAt(0).toUpperCase());
   }
 
   function card(t) {
