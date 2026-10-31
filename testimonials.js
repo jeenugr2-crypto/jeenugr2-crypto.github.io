@@ -43,7 +43,8 @@
 
   function card(t) {
     var article = el('article', 'tcard');
-    if (t.featured) article.classList.add('tcard--tint', 'tcard--tall');
+    article.tabIndex = 0;
+    if (t.featured) article.classList.add('tcard--tint');
     if (t.tint) article.classList.add('tcard--tint');
 
     var top = el('div', 'tcard__top');
@@ -52,7 +53,7 @@
     rating = Math.max(0, Math.min(5, rating));
     top.appendChild(el('span', 'stars', '★'.repeat(rating)));
 
-    var quote = el('p', 'tcard__quote', '"' + t.quote + '"');
+    var quote = el('p', 'tcard__quote', '“' + t.quote + '”');
     if (t.featured) quote.classList.add('tcard__quote--lg');
 
     var footer = el('footer', 'tcard__author');
@@ -68,18 +69,27 @@
     return article;
   }
 
+  function render(list) {
+    grid.innerHTML = '';
+    list.forEach(function (t) { grid.appendChild(card(t)); });
+    list.forEach(function (t) {
+      var duplicate = card(t);
+      duplicate.setAttribute('aria-hidden', 'true');
+      duplicate.tabIndex = -1;
+      grid.appendChild(duplicate);
+    });
+  }
+
   fetch(grid.dataset.src || 'testimonials.json')
     .then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
     })
     .then(function (list) {
-      grid.innerHTML = '';
-      list.forEach(function (t) { grid.appendChild(card(t)); });
+      render(list);
     })
     .catch(function (err) {
       console.warn('Could not load testimonials.json; using embedded fallback data.', err);
-      grid.innerHTML = '';
-      fallbackTestimonials.forEach(function (t) { grid.appendChild(card(t)); });
+      render(fallbackTestimonials);
     });
 })();
