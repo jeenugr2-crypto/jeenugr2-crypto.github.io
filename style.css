@@ -208,9 +208,10 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---------- brand ---------- */
 .brand { display: inline-flex; align-items: center; gap: 0.7rem; }
 .brand__mark {
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  object-fit: contain;
+  background: #0d0f12;
   flex-shrink: 0;
   box-shadow: 0 6px 16px rgba(30,30,30,0.25);
 }
@@ -654,8 +655,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .cta__mark {
   position: absolute; right: -3rem; top: -3rem;
   width: 340px; height: 340px;
-  border-radius: 50%;
-  opacity: 0.12;
+  border-radius: 28px;
+  object-fit: contain;
+  opacity: 0.14;
   z-index: -1;
   pointer-events: none;
 }
@@ -855,7 +857,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 480px) {
   .nav__inner { gap: .5rem; }
   .nav .brand { gap: .4rem; }
-  .nav .brand__mark { width: 34px; height: 34px; }
+  .nav .brand__mark { width: 40px; height: 40px; border-radius: 10px; }
   .nav .brand__name { font-size: .95rem; }
   .nav .brand__tag { font-size: .48rem; letter-spacing: .12em; }
   .nav__actions { gap: .35rem; }
