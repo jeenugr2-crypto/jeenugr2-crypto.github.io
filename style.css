@@ -779,3 +779,16 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 600px) {
   .recordings__grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- sample study notes ---------- */
+.study-notes { padding: clamp(3rem, 6vw, 6rem) 0; background: var(--cream-2); }
+.notes-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.notes-card { display: flex; flex-direction: column; padding: 1.6rem; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); box-shadow: var(--shadow-sm); }
+.notes-card h3 { font-family: var(--serif); font-size: 1.9rem; font-weight: 500; line-height: 1.2; margin-bottom: .8rem; }
+.notes-card p { color: var(--ink-soft); }
+.notes-card__meta { font-size: .85rem; margin-top: .5rem; margin-bottom: 1.5rem; }
+.notes-card__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: auto; }
+.notes-card__download { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; font-size: .9rem; }
+@media (max-width: 900px) {
+  .notes-grid { grid-template-columns: 1fr; }
+}
